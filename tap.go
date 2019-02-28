@@ -95,7 +95,7 @@ var TapFlagParsers = map[TapConnectFlag]TapItemParser{
 	LIST_VBUCKETS: TapParseVBList,
 }
 
-// Split the ORed flags into the individual bit flags.
+// SplitFlags splits the ORed flags into the individual bit flags.
 func (f TapConnectFlag) SplitFlags() []TapConnectFlag {
 	rv := []TapConnectFlag{}
 	for i := uint32(1); f != 0; i = i << 1 {

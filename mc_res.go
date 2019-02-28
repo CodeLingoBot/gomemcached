@@ -108,7 +108,7 @@ func (res *MCResponse) fillHeaderBytes(data []byte) int {
 	return pos
 }
 
-// Get just the header bytes for this response.
+// HeaderBytes gets just the header bytes for this response.
 func (res *MCResponse) HeaderBytes() []byte {
 	data := make([]byte, HDR_LEN+len(res.Extras)+len(res.Key))
 

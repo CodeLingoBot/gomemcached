@@ -36,7 +36,7 @@ func must(err error) {
 	}
 }
 
-// Handle until the handler returns a fatal message or a read or write
+// HandleIO handles until the handler returns a fatal message or a read or write
 // on the socket fails.
 func HandleIO(s io.ReadWriteCloser, handler RequestHandler) error {
 	defer func() { must(s.Close()) }()
@@ -47,7 +47,7 @@ func HandleIO(s io.ReadWriteCloser, handler RequestHandler) error {
 	return err
 }
 
-// Handle an individual message.
+// HandleMessage handles an individual message.
 func HandleMessage(r io.Reader, w io.Writer, handler RequestHandler) error {
 	req, err := ReadPacket(r)
 	if err != nil {

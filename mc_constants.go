@@ -190,7 +190,7 @@ func (s Status) String() (rv string) {
 	return rv
 }
 
-// Return true if a command is a "quiet" command.
+// IsQuiet returns true if a command is a "quiet" command.
 func (o CommandCode) IsQuiet() bool {
 	switch o {
 	case GETQ,
